@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <img src="./assets/planete-terre.png" alt="Vue logo" height="128" />
-    <nav>.
-      <router-link to="/">Home</router-link> |
-      <router-link to="/list" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link> |
-      <router-link to="/map" v-on:click.native="onMapClick">Carte des fournisseurs</router-link>
-      
+    <nav>
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/list" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link></li>
+        <li><router-link to="/map" v-on:click.native="onMapClick">Carte des fournisseurs</router-link></li>
+      </ul>
     </nav>
     <router-view />
   </div>
@@ -13,14 +14,14 @@
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
   methods: {
     onSuppliersListClick() {
-      window.alert('Vous allez être redirigé vers la liste des fournisseurs');
+      window.alert("Vous allez être redirigé vers la liste des fournisseurs");
     },
-    onMapClick (){
-      window.alert('Vous allez être redirigé sur la carte des fournisseurs');
-    }
+    onMapClick() {
+      window.alert("Vous allez être redirigé sur la carte des fournisseurs");
+    },
   },
 };
 </script>
