@@ -12,7 +12,7 @@
             <h2 class="card-title">{{ name }}</h2>
             <h3 class="green card-subtitle mb-2" v-if="status">A du stock ? OK</h3>
             <h3 class="red card-subtitle mb-2" v-else>A du stock ? KO</h3>
-            <h5 class="card-text">Date de relevé des stocks : {{ checkedAt.toLocaleString() }}</h5>
+            <h5 class="card-text">Date de relevé des stocks : {{ formatedDate }}</h5>
           </div>
         </div>
       </div>
@@ -21,12 +21,18 @@
 </template>
 
 <script>
+import * as timeago from "timeago.js";
 export default {
   name: "SupplierView",
   props: {
     name: String,
     status: Boolean,
     checkedAt: Date,
+  },
+  computed: {
+    formatedDate: function () {
+      return timeago.format(this.checkedAt, "fr_FR");
+    },
   },
 };
 </script>
