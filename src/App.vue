@@ -12,6 +12,14 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  methods: {
+    onSuppliersListClick (){
+      window.alert("Vous êtes sur la liste des fournisseurs");
+    },
+    onMapClick (){
+      window.alert("Trouver les fournisseurs proches de chez vous!");
+    }
   }
 }
 </script>
