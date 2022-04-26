@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <img src="./assets/planete-terre.png" alt="Vue logo" height="128" />
-    <nav>
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/list" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link></li>
-        <li><router-link to="/map" v-on:click.native="onMapClick">Carte des fournisseurs</router-link></li>
+    <nav class="p-3 bg-light text-white mb-5">
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-0">
+        <li><img src="./assets/planete-terre.png" alt="Vue logo" height="64" /></li>
+        <li class="link m-auto"><router-link to="/">Home</router-link></li>
+        <li class="link m-auto"><router-link to="/list" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link></li>
+        <li class="link m-auto"><router-link to="/map" v-on:click.native="onMapClick">Carte des fournisseurs</router-link></li>
       </ul>
     </nav>
     <router-view />
@@ -48,4 +48,6 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+@import'~bootstrap/dist/css/bootstrap.css';
 </style>
