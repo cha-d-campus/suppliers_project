@@ -4,7 +4,7 @@
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-0">
         <li><img src="./assets/planete-terre.png" alt="Vue logo" height="64" /></li>
         <li class="link m-auto"><router-link to="/">Home</router-link></li>
-        <li class="link m-auto"><router-link to="/list" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link></li>
+        <li class="link m-auto"><router-link to="/suppliers" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link></li>
         <li class="link m-auto"><router-link to="/map" v-on:click.native="onMapClick">Carte des fournisseurs</router-link></li>
       </ul>
     </nav>
