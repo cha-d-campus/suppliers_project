@@ -4,8 +4,10 @@
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-0">
         <li><img src="./assets/planete-terre.png" alt="Vue logo" height="64" /></li>
         <li class="link m-auto"><router-link to="/">Home</router-link></li>
-        <li class="link m-auto"><router-link to="/suppliers" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link></li>
-        <li class="link m-auto"><router-link to="/map" v-on:click.native="onMapClick">Carte des fournisseurs</router-link></li>
+        <li class="link m-auto"><router-link to="/suppliers">Liste des fournisseurs</router-link></li>
+        <li class="link m-auto"><router-link to="/map">Carte des fournisseurs</router-link></li>
+        <!-- v-on:click.native="onMapClick" -->
+        <!-- .native = Sert à faire un event sur les <router-link></router-link> -->
       </ul>
     </nav>
     <router-view />
@@ -15,14 +17,14 @@
 <script>
 export default {
   name: "App",
-  methods: {
-    onSuppliersListClick() {
-      window.alert("Vous allez être redirigé vers la liste des fournisseurs");
-    },
-    onMapClick() {
-      window.alert("Vous allez être redirigé sur la carte des fournisseurs");
-    },
-  },
+  // methods: {
+  //   onSuppliersListClick() {
+  //     window.alert("Vous allez être redirigé vers la liste des fournisseurs");
+  //   },
+  //   onMapClick() {
+  //     window.alert("Vous allez être redirigé sur la carte des fournisseurs");
+  //   },
+  // },
 };
 </script>
 
