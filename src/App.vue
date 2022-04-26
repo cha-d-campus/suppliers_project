@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img src="./assets/planete-terre.png" alt="Vue logo" height="128" />
+    <nav>.
+      <router-link to="/">Home</router-link> |
+      <router-link to="/list" v-on:click.native="onSuppliersListClick">Liste des fournisseurs</router-link> |
+      <router-link to="/map" v-on:click.native="onMapClick">Carte des fournisseurs</router-link>
+      
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
   methods: {
-    onSuppliersListClick (){
-      window.alert("Vous êtes sur la liste des fournisseurs");
+    onSuppliersListClick() {
+      window.alert('Vous allez être redirigé vers la liste des fournisseurs');
     },
     onMapClick (){
-      window.alert("Trouver les fournisseurs proches de chez vous!");
+      window.alert('Vous allez être redirigé sur la carte des fournisseurs');
     }
-  }
-}
+  },
+};
 </script>
+
 
 <style>
 #app {
@@ -31,6 +33,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
