@@ -38,10 +38,10 @@ export default {
   // ]
     suppliers: null,
     loading: true,
-    errored: false,
+    error: false,
     }
   },
-  mounted() {
+  created() {
     axios
       .get(
         "https://api-suppliers.herokuapp.com/api/suppliers"
@@ -52,7 +52,7 @@ export default {
       })
       .catch((error) => {
         console.log(error);
-        this.errored = true;
+        this.error = true;
       })
       .finally(() => (this.loading = false));
   },
