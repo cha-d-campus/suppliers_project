@@ -4,7 +4,7 @@
     <l-map style="height: 600px" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <div v-for="supplier in suppliers" :key="supplier.id">
-        <l-marker :lat-lng="marker"></l-marker>
+        <l-marker :lat-lng="[supplier.latitude, supplier.longitude]"></l-marker>
       </div>
     </l-map>
   </div>
@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      zoom: 13,
+      zoom: 12,
       path: "/images/",
       center: [45.19429156524638, 5.737591702212042],
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
