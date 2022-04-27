@@ -6,6 +6,7 @@
         :name="supplier.name"
         :status="supplier.status"
         :checkedAt="supplier.checkedAt"
+        :error="supplier.status"
       />
     </div>
   </div>
@@ -38,7 +39,7 @@ export default {
   // ]
     suppliers: null,
     loading: true,
-    error: false,
+    error: null,
     }
   },
   created() {
@@ -52,9 +53,9 @@ export default {
       })
       .catch((error) => {
         console.log(error);
-        this.error = true;
+        this.error = false;
       })
-      .finally(() => (this.loading = false));
+      .then(() => (this.loading = false))
   },
 }
 </script>
