@@ -7,16 +7,16 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/', 
-    redirect: {name: 'Accueil'},
+    redirect: {name: 'home'},
   },
   {
     path: '/home',
-    name: 'Accueil',
+    name: 'home',
     component: HomeView
   },
   {
     path: '/suppliers',
-    name: 'Liste',
+    name: 'suppliers',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: '/map',
-    name: 'Carte',
+    name: 'map',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -32,7 +32,7 @@ const routes = [
   },
   {
     path: '/supplier',
-    name: 'Fournisseur',
+    name: 'supplier',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.

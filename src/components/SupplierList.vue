@@ -13,6 +13,7 @@
 
 <script>
 import SupplierView from './SupplierView.vue'
+import axios from "axios";
 
 export default {
   name: 'SupplierList',
@@ -21,21 +22,39 @@ export default {
   },
   data() {
     return {
-      suppliers: [
-    {
-      id: 1,
-      name: "Fournisseur 1 ?",
-      status: true,
-      checkedAt: new Date('April 26, 2022 10:34:10')
-    },
-    {
-      id: 2,
-      name: "Fournisseur 2",
-      status: false,
-      checkedAt: new Date('April 25, 2022 15:34:10')
+  //     suppliers: [
+  //   {
+  //     id: 1,
+  //     name: "Fournisseur 1 ?",
+  //     status: true,
+  //     checkedAt: new Date('April 26, 2022 10:34:10')
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Fournisseur 2",
+  //     status: false,
+  //     checkedAt: new Date('April 25, 2022 15:34:10')
+  //   }
+  // ]
+    suppliers: null,
+    loading: true,
+    errored: false,
     }
-  ]
-    }
-  }
+  },
+  mounted() {
+    axios
+      .get(
+        "https://api-suppliers.herokuapp.com/api/suppliers"
+      )
+      .then((response) => {
+        console.log(response);
+        this.suppliers = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+        this.errored = true;
+      })
+      .finally(() => (this.loading = false));
+  },
 }
 </script>

@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <nav class="p-3 bg-light text-white mb-5">
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-0">
-        <li><img src="./assets/planete-terre.png" alt="Vue logo" height="64" /></li>
-        <li class="link m-auto"><router-link to="/">Home</router-link></li>
-        <li class="link m-auto"><router-link to="/suppliers">Liste des fournisseurs</router-link></li>
-        <li class="link m-auto"><router-link to="/map">Carte des fournisseurs</router-link></li>
-        <!-- v-on:click.native="onMapClick" -->
-        <!-- .native = Sert à faire un event sur les <router-link></router-link> -->
-      </ul>
+        <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-between mb-0">
+          <li><img src="./assets/planete-terre.png" alt="Vue logo" height="64" /></li>
+          <li>
+            <ul class="nav">
+              <li class="link m-4"><router-link to="/">Home</router-link></li>
+              <li class="link m-4"><router-link to="/suppliers">Liste des fournisseurs</router-link></li>
+              <li class="link m-4"><router-link to="/map">Carte des fournisseurs</router-link></li>
+              <!-- v-on:click.native="onMapClick" -->
+              <!-- .native = Sert à faire un event sur les <router-link></router-link> -->
+            </ul>
+          </li>
+        </ul>
     </nav>
     <router-view />
   </div>
@@ -45,6 +49,10 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+}
+
+nav a:hover {
+  color: #42b983;
 }
 
 nav a.router-link-exact-active {
