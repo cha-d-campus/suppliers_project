@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="p-3 bg-light text-white mb-5">
         <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-between mb-0">
-          <li><img src="./assets/planete-terre.png" alt="Vue logo" height="64" /></li>
+          <li><img src="./assets/planete-terre.png" alt="Vue logo" height="78" /></li>
           <li>
             <ul class="nav">
               <li class="link m-4"><router-link to="/">Home</router-link></li>
@@ -96,6 +96,10 @@ nav a:hover {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+ nav img {
+   margin-left: 24px;
+ }
 
 @import'~bootstrap/dist/css/bootstrap.css';
 </style>
