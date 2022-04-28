@@ -52,22 +52,7 @@ data() {
     error: null,
     }
   },
-// created() {
-//     axios
-//       .get(
-//         "https://api-suppliers.1herokuapp.com/api/suppliers"
-//       )
-//       .then((response) => {
-//         console.log(response);
-//         this.suppliers = response.data;
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//         this.error = true;
-//       })
-//       .then(() => (this.loading = false))
-//   },
-  mounted() {
+  created() {
     axios
       .get(
         "https://api-suppliers.herokuapp.com/api/suppliers"
