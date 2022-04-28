@@ -36,12 +36,20 @@ export default {
     return {
       zoom: 12,
       path: "/images/",
-      center: [45.19429156524638, 5.737591702212042],
+      center: [45.1850188, 30],
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       marker: latLng(45.1850188, 5.7316305),
     };
   },
+mounted() {
+  if(navigator.geolocation){
+    let self = this;
+       navigator.geolocation.getCurrentPosition(function(truc){
+        self.center = [truc.coords.latitude, truc.coords.longitude];
+      })
+    }
+  }
 };
 </script>

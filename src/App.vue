@@ -66,7 +66,7 @@ data() {
         this.error = true;
       })
       .then(() => (this.loading = false))
-  }
+  },
   };
 </script>
 
