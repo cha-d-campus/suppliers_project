@@ -24,6 +24,9 @@ Icon.Default.mergeOptions({
 
 export default {
   name: "SupplierMap",
+  props: {
+    suppliers: Array,
+  },
   components: {
     LMap,
     LTileLayer,
@@ -37,19 +40,7 @@ export default {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-        suppliers: [
-        {
-          id: 1,
-          latitude: 10,
-          longitude: 10,
-        },
-        {
-          id: 2,
-          latitude: 11,
-          longitude: 9.6,
-        },
-      ],
-      marker: latLng(45.1850188,5.7316305),
+      marker: latLng(45.1850188, 5.7316305),
     };
   },
 };

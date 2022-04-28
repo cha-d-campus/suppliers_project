@@ -14,11 +14,13 @@
           </li>
         </ul>
     </nav>
-    <router-view />
+    <router-view :suppliers="suppliers" :error="error"></router-view>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "App",
   // methods: {
@@ -29,7 +31,58 @@ export default {
   //     window.alert("Vous allez être redirigé sur la carte des fournisseurs");
   //   },
   // },
-};
+data() {
+    return {
+  //     suppliers: [
+  //   {
+  //     id: 1,
+  //     name: "Fournisseur 1 ?",
+  //     status: true,
+  //     checkedAt: new Date('April 26, 2022 10:34:10')
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Fournisseur 2",
+  //     status: false,
+  //     checkedAt: new Date('April 25, 2022 15:34:10')
+  //   }
+  // ]
+    suppliers: null,
+    loading: true,
+    error: null,
+    }
+  },
+// created() {
+//     axios
+//       .get(
+//         "https://api-suppliers.1herokuapp.com/api/suppliers"
+//       )
+//       .then((response) => {
+//         console.log(response);
+//         this.suppliers = response.data;
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//         this.error = true;
+//       })
+//       .then(() => (this.loading = false))
+//   },
+  mounted() {
+    axios
+      .get(
+        "https://api-suppliers.herokuapp.com/api/suppliers"
+      )
+      .then((response) => {
+        console.log(response);
+        this.suppliers = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+        this.error = true;
+      })
+      .then(() => (this.loading = false))
+  }
+  };
 </script>
 
 
