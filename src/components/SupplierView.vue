@@ -4,10 +4,7 @@
     <h3 id="green" v-if="status">A du stock ? OK</h3>
     <h3 id="red" v-else>A du stock ? KO</h3>
     <h5>Date de relevé des stocks : {{ checkedAt.toLocaleString() }}</h5> -->
-  <!-- <select v-model="status">
-    <option value="true">OK</option>
-    <option value="false">KO</option>
-  </select> -->
+  
     <div class="container m-5">
       <div class="row justify-content-center m-5">
         <div class="card border border-dark border-2 col-6">
@@ -34,6 +31,7 @@ export default {
     status: Boolean,
     checkedAt: String,
   },
+  
   computed: {
     formatedDate: function () {
       return timeago.format(this.checkedAt, "fr_FR");
